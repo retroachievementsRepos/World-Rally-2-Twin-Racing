@@ -812,7 +812,7 @@ function getTriggerConditionCompletedRally(rallyId, isCarRequired, carId, isPosi
                 trigger = trigger && getRallyPortugalPoints() >= 15 && prev(getRallyPortugalPoints()) == 0xFF && getWorldChampionshipPoints() >= 15
             }
             else if(positionRequired == 2){
-                trigger = trigger && getRallyPortugalPoints() >= 10 && prev(getRallyPortugalPoints()) == 0xFF && getWorldChampionshipPoints() >= 10
+                trigger = trigger && getRallyPortugalPoints() >= 12 && prev(getRallyPortugalPoints()) == 0xFF && getWorldChampionshipPoints() >= 12
             }
         }
         else {
@@ -830,7 +830,7 @@ function getTriggerConditionCompletedRally(rallyId, isCarRequired, carId, isPosi
                 trigger = trigger && getRallySafariPoints() >= 15 && prev(getRallySafariPoints()) == 0xFF && getWorldChampionshipPoints() >= 15
             }
             else if(positionRequired == 2){
-                trigger = trigger && getRallySafariPoints() >= 10 && prev(getRallySafariPoints()) == 0xFF && getWorldChampionshipPoints() >= 10
+                trigger = trigger && getRallySafariPoints() >= 12 && prev(getRallySafariPoints()) == 0xFF && getWorldChampionshipPoints() >= 12
             }
         }
         else {
@@ -848,7 +848,7 @@ function getTriggerConditionCompletedRally(rallyId, isCarRequired, carId, isPosi
                 trigger = trigger && getTourDeCorsePoints() >= 15 && prev(getTourDeCorsePoints()) == 0xFF && getWorldChampionshipPoints() >= 15
             }
             else if(positionRequired == 2){
-                trigger = trigger && getTourDeCorsePoints() >= 10 && prev(getTourDeCorsePoints()) == 0xFF && getWorldChampionshipPoints() >= 10
+                trigger = trigger && getTourDeCorsePoints() >= 12 && prev(getTourDeCorsePoints()) == 0xFF && getWorldChampionshipPoints() >= 12
             }
         }
         else {
@@ -866,7 +866,7 @@ function getTriggerConditionCompletedRally(rallyId, isCarRequired, carId, isPosi
                 trigger = trigger && getRallyRACPoints() >= 15 && prev(getRallyRACPoints()) == 0xFF && getWorldChampionshipPoints() >= 15
             }
             else if(positionRequired == 2){
-                trigger = trigger && getRallyRACPoints() >= 10 && prev(getRallyRACPoints()) == 0xFF && getWorldChampionshipPoints() >= 10
+                trigger = trigger && getRallyRACPoints() >= 12 && prev(getRallyRACPoints()) == 0xFF && getWorldChampionshipPoints() >= 12
             }
         }
         else {
