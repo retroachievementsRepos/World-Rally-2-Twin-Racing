@@ -739,85 +739,150 @@ function setAchievementVictoryStage(rallyId, stage){
     achievement(id=id, title=title, points=points, type=type, description=description, trigger=trigger)
 }
 
-// Achievement function for completed rallies
-function setAchievementCompleteRally(rallyId, isExtraCreditsAllowed, carId, isCarSpecific){
-    trigger = isPlayModeOnePlayerWindow() && isNormalOrHigherDifficulty() && isPlayingGame() &&
-              getWorldChampionshipPoints() != 0xFF
-                  
-     
-              
-    if(rallyId == 0){
-        trigger = trigger && once(isRallyPortugalSelected()) && getRallyPortugalPoints() != 0xFF && prev(getRallyPortugalPoints()) == 0xFF 
-    }
-    else if (rallyId == 1){
-        trigger = trigger && once(isRallySafariSelected()) && getRallySafariPoints() != 0xFF && prev(getRallySafariPoints()) == 0xFF 
-    }
-    else if (rallyId == 2){
-        trigger = trigger && once(isTourDeCorseSelected()) && getTourDeCorsePoints() != 0xFF && prev(getTourDeCorsePoints()) == 0xFF 
-    }
-    else if (rallyId == 3){
-        trigger = trigger && once(isRallyRACSelected()) && getRallyRACPoints() != 0xFF && prev(getRallyRACPoints()) == 0xFF 
-    }
-    else {}
+/*
+for raId in rallies {
     
-    if !isExtraCreditsAllowed {
-        trigger = trigger && never(prev(getExtraCreditsUsed()) < getExtraCreditsUsed()) 
+    setAchievementCompleteRally(raId, false, 0, false, 0, 0) // Completed 1 cc - any car
+    
+    for car in rallies[raId]["completedOneCredit"] {
+         setAchievementCompleteRally(raId, true, car, false, 0, 0) // Completed 1cc - specific car
+         setAchievementCompleteRally(raId, true, car, true, 0, 0) // Victory 1cc - specific car
     }
-    
-    trigger = trigger && never(getRallyDifficulty() != rallyId)
-    
-    
+}
 
-    if isExtraCreditsAllowed {    
-        if isCarSpecific {} // There's no cheevos for this case
+*/
+
+
+// Achievement function for completed rallies
+function setAchievementCompleteRally(rallyId, isCarRequired, carId, isPositionRequired, positionRequired, extraCreditsAllowed){
+    if isPositionRequired && positionRequired == 0 {
+        achievement(id = rallies[rallyId]["victory"][carId]["id"], 
+                title = rallies[rallyId]["victory"][carId]["title"],
+                points = rallies[rallyId]["victory"][carId]["points"],
+                type= "",
+                description = rallies[rallyId]["victory"][carId]["description"],
+                trigger = getTriggerConditionCompletedRally(rallyId, isCarRequired, carId, isPositionRequired, positionRequired, extraCreditsAllowed))
+    }
+    else {
+        if(extraCreditsAllowed == 0 && isCarRequired) {
+            achievement(id = rallies[rallyId]["completedOneCredit"][carId]["id"], 
+                        title = rallies[rallyId]["completedOneCredit"][carId]["title"],
+                        points = rallies[rallyId]["completedOneCredit"][carId]["points"],
+                        type="",
+                        description = rallies[rallyId]["completedOneCredit"][carId]["description"],
+                        trigger = getTriggerConditionCompletedRally(rallyId, isCarRequired, carId, isPositionRequired, positionRequired, extraCreditsAllowed))
+        }
         else {
             achievement(id = rallies[rallyId]["completed"]["id"], 
                         title = rallies[rallyId]["completed"]["title"],
                         points = rallies[rallyId]["completed"]["points"],
                         type="progression",
                         description = rallies[rallyId]["completed"]["description"],
-                        trigger = trigger)
+                        trigger = getTriggerConditionCompletedRally(rallyId, isCarRequired, carId, isPositionRequired, positionRequired, extraCreditsAllowed))
         }
     }
-    else {
-        if isCarSpecific {
-            achievement(id = rallies[rallyId]["completedOneCredit"][carId]["id"], 
-                        title = rallies[rallyId]["completedOneCredit"][carId]["title"],
-                        points = rallies[rallyId]["completedOneCredit"][carId]["points"],
-                        type="",
-                        description = rallies[rallyId]["completedOneCredit"][carId]["description"],
-                        trigger = trigger && getCarSelected() == carId)
-        }
-        else {} // There's no cheevos for this case
-    }
+    
 }
 
 // Achievement function for victory in rallies
-function setAchievementVictoryRally(rallyId, carId){
-    trigger = isPlayModeOnePlayerWindow() && isNormalOrHigherDifficulty() && isPlayingGame() &&
-              getExtraCreditsUsed() == 0 && getWorldChampionshipPoints() >= 20                   
-              
-    if(rallyId == 0){
-        trigger = trigger && isRallyPortugalSelected() && getRallyPortugalPoints() == 20 && prev(getRallyPortugalPoints()) == 0xFF 
-    }
-    else if (rallyId == 1){
-        trigger = trigger && isRallySafariSelected() && getRallySafariPoints() == 20 && prev(getRallySafariPoints()) == 0xFF 
-    }
-    else if (rallyId == 2){
-        trigger = trigger && isTourDeCorseSelected() && getTourDeCorsePoints() == 20 && prev(getTourDeCorsePoints()) == 0xFF 
-    }
-    else if (rallyId == 3){
-        trigger = trigger && isRallyRACSelected() && getRallyRACPoints() == 20 && prev(getRallyRACPoints()) == 0xFF 
-    }
-    else {}
-    
-    
+function setAchievementVictoryRally(rallyId, isCarRequired, carId, extraCreditsAllowed){       
     achievement(id = rallies[rallyId]["victory"][carId]["id"], 
                 title = rallies[rallyId]["victory"][carId]["title"],
                 points = rallies[rallyId]["victory"][carId]["points"],
                 type= "",
                 description = rallies[rallyId]["victory"][carId]["description"],
-                trigger = trigger && getCarSelected() == carId)
+                trigger = getTriggerConditionCompletedRally(rallyId, isCarRequired, carId, true, 0, extraCreditsAllowed))
+}
+
+function getTriggerConditionCompletedRally(rallyId, isCarRequired, carId, isPositionRequired, positionRequired, extraCreditsAllowed){
+    trigger = isPlayModeOnePlayerWindow() && isNormalOrHigherDifficulty() && isPlayingGame()
+    
+    if isCarRequired {
+        trigger = trigger && getCarSelected() == carId
+    }
+                            
+    if(rallyId == 0){
+        trigger = trigger && once(isRallyPortugalSelected())
+        
+        if isPositionRequired {
+            if(positionRequired == 0){
+                trigger = trigger && getRallyPortugalPoints() == 20 && prev(getRallyPortugalPoints()) == 0xFF && getWorldChampionshipPoints() >= 20
+            }
+            else if(positionRequired == 1){
+                trigger = trigger && getRallyPortugalPoints() >= 15 && prev(getRallyPortugalPoints()) == 0xFF && getWorldChampionshipPoints() >= 15
+            }
+            else if(positionRequired == 2){
+                trigger = trigger && getRallyPortugalPoints() >= 10 && prev(getRallyPortugalPoints()) == 0xFF && getWorldChampionshipPoints() >= 10
+            }
+        }
+        else {
+            trigger = trigger && getRallyPortugalPoints() != 0xFF && prev(getRallyPortugalPoints()) == 0xFF && getWorldChampionshipPoints() != 0xFF
+        }
+    }
+    else if (rallyId == 1){
+        trigger = trigger && once(isRallySafariSelected())
+        
+        if isPositionRequired {
+            if(positionRequired == 0){
+                trigger = trigger && getRallySafariPoints() == 20 && prev(getRallySafariPoints()) == 0xFF && getWorldChampionshipPoints() >= 20
+            }
+            else if(positionRequired == 1){
+                trigger = trigger && getRallySafariPoints() >= 15 && prev(getRallySafariPoints()) == 0xFF && getWorldChampionshipPoints() >= 15
+            }
+            else if(positionRequired == 2){
+                trigger = trigger && getRallySafariPoints() >= 10 && prev(getRallySafariPoints()) == 0xFF && getWorldChampionshipPoints() >= 10
+            }
+        }
+        else {
+            trigger = trigger && getRallySafariPoints() != 0xFF && prev(getRallySafariPoints()) == 0xFF && getWorldChampionshipPoints() != 0xFF
+        }
+    }
+    else if (rallyId == 2){
+        trigger = trigger && once(isTourDeCorseSelected()) && getTourDeCorsePoints() != 0xFF && prev(getTourDeCorsePoints()) == 0xFF
+        
+        if isPositionRequired {
+            if(positionRequired == 0){
+                trigger = trigger && getTourDeCorsePoints() == 20 && prev(getTourDeCorsePoints()) == 0xFF && getWorldChampionshipPoints() >= 20
+            }
+            else if(positionRequired == 1){
+                trigger = trigger && getTourDeCorsePoints() >= 15 && prev(getTourDeCorsePoints()) == 0xFF && getWorldChampionshipPoints() >= 15
+            }
+            else if(positionRequired == 2){
+                trigger = trigger && getTourDeCorsePoints() >= 10 && prev(getTourDeCorsePoints()) == 0xFF && getWorldChampionshipPoints() >= 10
+            }
+        }
+        else {
+            trigger = trigger && getTourDeCorsePoints() != 0xFF && prev(getTourDeCorsePoints()) == 0xFF && getWorldChampionshipPoints() != 0xFF
+        }
+    }
+    else if (rallyId == 3){
+        trigger = trigger && once(isRallyRACSelected())
+        
+        if isPositionRequired {
+            if(positionRequired == 0){
+                trigger = trigger && getRallyRACPoints() == 20 && prev(getRallyRACPoints()) == 0xFF && getWorldChampionshipPoints() >= 20
+            }
+            else if(positionRequired == 1){
+                trigger = trigger && getRallyRACPoints() >= 15 && prev(getRallyRACPoints()) == 0xFF && getWorldChampionshipPoints() >= 15
+            }
+            else if(positionRequired == 2){
+                trigger = trigger && getRallyRACPoints() >= 10 && prev(getRallyRACPoints()) == 0xFF && getWorldChampionshipPoints() >= 10
+            }
+        }
+        else {
+            trigger = trigger && getRallyRACPoints() != 0xFF && prev(getRallyRACPoints()) == 0xFF && getWorldChampionshipPoints() != 0xFF
+        }
+    }
+    else {}
+    
+    if extraCreditsAllowed != 0xFF { // We use 0xFF as a wildcard value to not limit extra credits
+        trigger = trigger && never(prev(getExtraCreditsUsed()) + extraCreditsAllowed < getExtraCreditsUsed()) 
+    }    
+    
+    
+    trigger = trigger && never(getRallyDifficulty() != rallyId)
+    
+    return trigger
 }
 
 
@@ -958,26 +1023,19 @@ for ral in rallies {
     }
 }
 
-// Achievements - Rallies Completed
+// Achievements - Rallies
 // --------------------------------
 
 for raId in rallies {
-    setAchievementCompleteRally(raId, true, 0, false)
+    
+    setAchievementCompleteRally(raId, false, 0, false, 0, 0xFF) // Completed 1 cc - any car
     
     for car in rallies[raId]["completedOneCredit"] {
-        setAchievementCompleteRally(raId, false, car, true)  
+         setAchievementCompleteRally(raId, true, car, false, 0, 0) // Completed 1cc - specific car
+         setAchievementCompleteRally(raId, true, car, true, 0, 0) // Victory 1cc - specific car
     }
 }
 
-
-// Achievements - Rallies Won
-// --------------------------
-
-for raId in rallies {
-    for car in rallies[raId]["completedOneCredit"] {
-        setAchievementVictoryRally(raId, car)  
-    }
-}
 
 // Achievements - Game Completed
 // -----------------------------
