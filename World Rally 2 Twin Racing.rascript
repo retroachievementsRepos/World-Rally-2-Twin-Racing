@@ -346,31 +346,31 @@ rallies = {
         "leaderboard": {
             "id": 0,
             "title": "Rally Portugal",
-            "description": "Leaderboard Rally Portugal with only 1 credit in one player mode, on Normal or Higher difficulty"
+            "description": "Leaderboard Rally Portugal with only 1 credit in one player mode, on Normal or higher difficulty"
         },
         "completed": {
             "id": 0,
             "title": "Obrigado",
-            "description": "Complete Rally Portugal, in one player mode, on Normal or Higher difficulty",
+            "description": "Complete Rally Portugal, in one player mode, on Normal or higher difficulty",
             "points": 5
         },
         "completedOneCredit": {
             0: {
                 "id": 0,
                 "title": "The Iberian Trial",
-                "description": "Complete Rally Portugal with the Ford Escort, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Complete Rally Portugal with the Ford Escort, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             },
             1: {
                 "id": 0,
                 "title": "The Lusitanian Leap",
-                "description": "Complete Rally Portugal with the Subaru Impreza, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Complete Rally Portugal with the Subaru Impreza, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             },
             2: {
                 "id": 0,
                 "title": "Dust of the Douro",
-                "description": "Complete Rally Portugal with the Toyota Celica, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Complete Rally Portugal with the Toyota Celica, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             }       
         },
@@ -378,19 +378,19 @@ rallies = {
             0: {
                 "id": 0,
                 "title": "Grip of Glory",
-                "description": "Win Rally Portugal with the Ford Escort, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Win Rally Portugal with the Ford Escort, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             },
             1: {
                 "id": 0,
                 "title": "Fado and Fury",
-                "description": "Win Rally Portugal with the Subaru Impreza, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Win Rally Portugal with the Subaru Impreza, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             },
             2: {
                 "id": 0,
                 "title": "Roar of the Atlantic",
-                "description": "Win Rally Portugal with the Toyota Celica, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Win Rally Portugal with the Toyota Celica, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             }
         },
@@ -426,31 +426,31 @@ rallies = {
         "leaderboard": {
             "id": 0,
             "title": "Rally Safari",
-            "description": "Leaderboard Rally Safari with only 1 credit in one player mode, on Normal or Higher difficulty"
+            "description": "Leaderboard Rally Safari with only 1 credit in one player mode, on Normal or higher difficulty"
         },
         "completed": {
             "id": 0,
             "title": "Taming the Wild",
-            "description": "Complete Rally Safari, in one player mode, on Normal or Higher difficulty",
+            "description": "Complete Rally Safari, in one player mode, on Normal or higher difficulty",
             "points": 5
         },
         "completedOneCredit": {
             0: {
                 "id": 0,
                 "title": "Dustborn Resolve",
-                "description": "Complete Rally Safari with the Ford Escort, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Complete Rally Safari with the Ford Escort, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             },
             1: {
                 "id": 0,
                 "title": "No Trail Too Rough",
-                "description": "Complete Rally Safari with the Subaru Impreza, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Complete Rally Safari with the Subaru Impreza, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             },
             2: {
                 "id": 0,
                 "title": "Sunburned Speed",
-                "description": "Complete Rally Safari with the Toyota Celica, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Complete Rally Safari with the Toyota Celica, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             }       
         },
@@ -458,19 +458,19 @@ rallies = {
             0: {
                 "id": 0,
                 "title": "Predator's Pace",
-                "description": "Win Rally Safari with the Ford Escort, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Win Rally Safari with the Ford Escort, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             },
             1: {
                 "id": 0,
                 "title": "From Rift to Victory",
-                "description": "Win Rally Safari with the Subaru Impreza, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Win Rally Safari with the Subaru Impreza, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             },
             2: {
                 "id": 0,
                 "title": "Savanna Sprint",
-                "description": "Win Rally Safari with the Toyota Celica, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Win Rally Safari with the Toyota Celica, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             }
         },
@@ -506,31 +506,31 @@ rallies = {
         "leaderboard": {
             "id": 0,
             "title": "Tour De Corse",
-            "description": "Leaderboard Tour de Corse with only 1 credit in one player mode, on Normal or Higher difficulty"
+            "description": "Leaderboard Tour de Corse with only 1 credit in one player mode, on Normal or higher difficulty"
         },
         "completed": {
             "id": 0,
             "title": "Steel Nerves, French Curves",
-            "description": "Complete Tour de Corse, in one player mode, on Normal or Higher difficulty",
+            "description": "Complete Tour de Corse, in one player mode, on Normal or higher difficulty",
             "points": 5
         },
         "completedOneCredit": {
             0: {
                 "id": 0,
                 "title": "Serpent's Rhythm",
-                "description": "Complete Tour de Corse with the Ford Escort, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Complete Tour de Corse with the Ford Escort, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             },
             1: {
                 "id": 0,
                 "title": "Knight of the Isle",
-                "description": "Complete Tour de Corse with the Subaru Impreza, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Complete Tour de Corse with the Subaru Impreza, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             },
             2: {
                 "id": 0,
                 "title": "Corsican Curves",
-                "description": "Complete Tour de Corse with the Toyota Celica, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Complete Tour de Corse with the Toyota Celica, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             }       
         },
@@ -538,19 +538,19 @@ rallies = {
             0: {
                 "id": 0,
                 "title": "Victory in the Veins",
-                "description": "Win Tour de Corse with the Ford Escort, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Win Tour de Corse with the Ford Escort, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             },
             1: {
                 "id": 0,
                 "title": "Crown of the Cliffs",
-                "description": "Win Tour de Corse with the Subaru Impreza, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Win Tour de Corse with the Subaru Impreza, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             },
             2: {
                 "id": 0,
                 "title": "Precision Unleashed",
-                "description": "Win Tour de Corse with the Toyota Celica, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Win Tour de Corse with the Toyota Celica, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             }
         },
@@ -586,31 +586,31 @@ rallies = {
         "leaderboard": {
             "id": 0,
             "title": "Rally RAC",
-            "description": "Leaderboard Rally RAC with only 1 credit in one player mode, on Normal or Higher difficulty"
+            "description": "Leaderboard Rally RAC with only 1 credit in one player mode, on Normal or higher difficulty"
         },
         "completed": {
             "id": 0,
             "title": "The Long Drive Home",
-            "description": "Complete Rally RAC, in one player mode, on Normal or Higher difficulty",
+            "description": "Complete Rally RAC, in one player mode, on Normal or higher difficulty",
             "points": 5
         },
         "completedOneCredit": {
             0: {
                 "id": 0,
                 "title": "The Albion Run",
-                "description": "Complete Rally RAC with the Ford Escort, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Complete Rally RAC with the Ford Escort, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             },
             1: {
                 "id": 0,
                 "title": "Steel over Mud",
-                "description": "Complete Rally RAC with the Subaru Impreza, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Complete Rally RAC with the Subaru Impreza, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             },
             2: {
                 "id": 0,
                 "title": "The Long Chase",
-                "description": "Complete Rally RAC with the Toyota Celica, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Complete Rally RAC with the Toyota Celica, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 10               
             }       
         },
@@ -618,19 +618,19 @@ rallies = {
             0: {
                 "id": 0,
                 "title": "Master of the Mist",
-                "description": "Win Rally RAC with the Ford Escort, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Win Rally RAC with the Ford Escort, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 25               
             },
             1: {
                 "id": 0,
                 "title": "Tea and Triumph",
-                "description": "Win Rally RAC with the Subaru Impreza, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Win Rally RAC with the Subaru Impreza, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 25               
             },
             2: {
                 "id": 0,
                 "title": "Fog and Fury",
-                "description": "Win Rally RAC with the Toyota Celica, with only 1 credit in one player mode, on Normal or Higher difficulty",
+                "description": "Win Rally RAC with the Toyota Celica, with only 1 credit in one player mode, on Normal or higher difficulty",
                 "points": 25               
             }
         },
@@ -705,7 +705,7 @@ function setAchievementVictoryStage(rallyId, stage){
     title = rallies[rallyId]["stages"][stage]["winningTitle"]
     points = rallies[rallyId]["stages"][stage]["winningPoints"]
     type = ""
-    description = format("Win {0} - {1} Stage {2}, in one player mode, on Normal or Higher difficulty", 
+    description = format("Win {0} - {1} Stage {2}, in one player mode, on Normal or higher difficulty", 
             rallies[rallyId]["stages"][stage]["name"], 
             rallies[rallyId]["name"],
             rallies[rallyId]["stages"][stage]["stage"])
@@ -974,7 +974,7 @@ function setStageLeaderboard(rallyId, stage){
             rallies[rallyId]["name"],
             rallies[rallyId]["stages"][stage]["stage"],             
             rallies[rallyId]["stages"][stage]["name"])
-    description = format("Leaderboard {0} Stage {1} - {2} in one player mode, on Normal or Higher difficulty", 
+    description = format("Leaderboard {0} Stage {1} - {2} in one player mode, on Normal or higher difficulty", 
             rallies[rallyId]["name"],
             rallies[rallyId]["stages"][stage]["stage"],             
             rallies[rallyId]["stages"][stage]["name"])
@@ -1041,17 +1041,17 @@ for raId in rallies {
 // -----------------------------
 setGameCompletedAchievement(id = 0,
     title = "Another Day at the Office", points = 25, type="win_condition",
-    description = "Beat the game in one player mode, on Normal or Higher difficulty",
+    description = "Beat the game in one player mode, on Normal or higher difficulty",
     isPositionRequired = false, positionReq = 0, isExtraCreditsLimited = false, extraCredits = 0)
     
 setGameCompletedAchievement(id = 0,
     title = "Touching the Glory", points = 50, type="",
-    description = "Finish in third position, or better, in the World Championship with only 1 credit in one player mode, on Normal or Higher difficulty",
+    description = "Finish in third position, or better, in the World Championship with only 1 credit in one player mode, on Normal or higher difficulty",
     isPositionRequired = true, positionReq = 2, isExtraCreditsLimited = true, extraCredits = 0)
     
 setGameCompletedAchievement(id = 0,
     title = "Rally Is My Middle Name", points = 50, type="",
-    description = "Win the World Championship with a maximum of 3 credits in one player mode, on Normal or Higher difficulty",
+    description = "Win the World Championship with a maximum of 3 credits in one player mode, on Normal or higher difficulty",
     isPositionRequired = true, positionReq = 0, isExtraCreditsLimited = true, extraCredits = 2)
 
 // Leaderboards - Stages
@@ -1078,7 +1078,7 @@ for raId in rallies{
 leaderboard(
         id = 0, 
         title = "Total Score Points",
-        description = "Total Score Points with only 1 credit in one player mode, on Normal or Higher difficulty",
+        description = "Total Score Points with only 1 credit in one player mode, on Normal or higher difficulty",
         start  = isPlayModeOnePlayerWindow() && isNormalOrHigherDifficulty() && isPlayingGame() && getExtraCreditsUsed() == 0 &&
                 (isRallyPortugalSelected() || isRallySafariSelected() || isTourDeCorseSelected() || isRallyRACSelected()) &&
                 prev(!isStageChronoActive())  && isStageChronoActive(), // When the Chrono starts counting
