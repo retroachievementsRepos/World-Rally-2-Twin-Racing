@@ -170,6 +170,10 @@ function getRallyRACPoints() => byte(0x026326)
 //          0x01 = Rally has been selected (remains 01 during all the game)
 function isRallyPortugalSelected() {
     return byte(0x0263A6) == 1  
+}
+
+function isRallyPortugalNotSelected() { // We limit the "NO" selection to value "0"
+    return byte(0x0263A6) == 0  
 } 
 
 // $0263A8: [8bit] Rally Safari has been selected
@@ -178,7 +182,11 @@ function isRallyPortugalSelected() {
 //          0x01 = Rally has been selected (remains 01 during all the game)
 function isRallySafariSelected(){
     return byte(0x0263A8) == 1
-} 
+}
+
+function isRallySafariNotSelected(){ // We limit the "NO" selection to value "0"
+    return byte(0x0263A8) == 0
+}  
 
 // $0263AA: [8bit] Tour de Corse has been selected
 //          
@@ -188,6 +196,10 @@ function isTourDeCorseSelected(){
     return byte(0x0263AA) == 1
 }
 
+function isTourDeCorseNotSelected(){ // We limit the "NO" selection to value "0"
+    return byte(0x0263AA) == 0
+}
+
 // $0263AC: [8bit] Rally RAC has been selected
 //          
 //          0x00 = Rally not selected yet
@@ -195,6 +207,10 @@ function isTourDeCorseSelected(){
 function isRallyRACSelected(){
     return byte(0x0263AC) == 1
 } 
+
+function isRallyRACNotSelected(){ // We limit the "NO" selection to value "0"
+    return byte(0x0263AC) == 0
+}
 
 // $0263CC: [8bit] Rally/Difficulty
 //          
@@ -802,7 +818,7 @@ function getTriggerConditionCompletedRally(rallyId, isCarRequired, carId, isPosi
     }
                             
     if(rallyId == 0){
-        trigger = trigger && once(isRallyPortugalSelected())
+        trigger = trigger && once(prev(isRallyPortugalNotSelected()) && isRallyPortugalSelected())
         
         if isPositionRequired {
             if(positionRequired == 0){
@@ -820,7 +836,7 @@ function getTriggerConditionCompletedRally(rallyId, isCarRequired, carId, isPosi
         }
     }
     else if (rallyId == 1){
-        trigger = trigger && once(isRallySafariSelected())
+        trigger = trigger && once(prev(isRallySafariNotSelected()) && isRallySafariSelected())
         
         if isPositionRequired {
             if(positionRequired == 0){
@@ -838,7 +854,7 @@ function getTriggerConditionCompletedRally(rallyId, isCarRequired, carId, isPosi
         }
     }
     else if (rallyId == 2){
-        trigger = trigger && once(isTourDeCorseSelected()) && getTourDeCorsePoints() != 0xFF && prev(getTourDeCorsePoints()) == 0xFF
+        trigger = trigger && once(prev(isTourDeCorseNotSelected()) && isTourDeCorseSelected())
         
         if isPositionRequired {
             if(positionRequired == 0){
@@ -856,7 +872,7 @@ function getTriggerConditionCompletedRally(rallyId, isCarRequired, carId, isPosi
         }
     }
     else if (rallyId == 3){
-        trigger = trigger && once(isRallyRACSelected())
+        trigger = trigger && once(prev(isRallyRACNotSelected()) && isRallyRACSelected())
         
         if isPositionRequired {
             if(positionRequired == 0){
